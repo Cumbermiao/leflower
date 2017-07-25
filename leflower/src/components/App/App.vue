@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <home></home>
+    <router-view></router-view>
     <aside id="aside">
       <div @click="wx()">
         <img src="../../assets/App/xf_wx.png" alt="">
@@ -20,7 +20,7 @@
         </router-link>
       </div>
       <div>
-        <router-link to="/type">
+        <router-link to="/types">
           <img src="../../assets/App/footer02.png" alt="">
         </router-link>
       </div>
@@ -52,9 +52,15 @@
 
 <script>
 import home from './Home/Home'
-import jquery from '@/lib/jquery.min.js'
+import types from './Types/Types'
+// import jquery from '@/lib/jquery.min.js'
+import router from '@/router/router'
+
 export default {
   name: 'app',
+  components:{
+  types
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -82,12 +88,12 @@ export default {
         closeBtn: 0,
         shadeClose: true,
         skin: '#999',
-        content: $('.layer')
+        content: $('.layer'),
+        btn: ["关闭"],
+        btnAlign: "c",
+        cloaseBtn:1
       })
     }
-  },
-  components: {
-    home
   }
 }
 </script>
@@ -126,5 +132,13 @@ footer>div {
 
 img {
   height: 2.8rem
+}
+
+.layer {
+  background-color: #eee;
+  text-align: center;
+  padding: 2rem;
+  line-height: 2rem;
+  display: none;
 }
 </style>
