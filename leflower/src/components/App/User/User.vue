@@ -11,11 +11,13 @@
                 <input type="psw" v-model="psw" placeholder="输入正确的登录密码">
             </div>
             <div class="form-g">
-               <input type="checkbox"><label for="">一个月免登陆</label>
+                <input type="checkbox">
+                <label for="">一个月免登陆</label>
             </div>
         </form>
-        <div>
-            <a href="">8秒快速免费注册</a>
+        <div class="button_group">
+            <a class="register" href="">8秒快速免费注册</a>
+            <a href="" class="login">登录</a>
         </div>
     </div>
 </template>
@@ -40,10 +42,13 @@ form {
     padding: 0.9rem;
     border: 1px solid #ddd;
 }
-.form-g{
+
+.form-g {
     margin-bottom: 1.5rem;
 }
-input[type=text],input[type=psw]{
+
+input[type=text],
+input[type=psw] {
     font-size: 0.95rem;
     padding: 0.625rem;
     width: 90%;
@@ -54,5 +59,31 @@ label {
     display: inline-block;
     font-weight: 700;
     margin: 0.5rem 0;
+}
+
+.button_group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.625rem;
+}
+
+.button_group a {
+    display: inline-block;
+    height: 2.2rem;
+    width: 48%;
+    font-size: 0.875rem;
+    color: #fff;
+    border-radius: 0.15rem;
+    text-align: center;
+    line-height: 2.2rem;
+}
+
+.register {
+    background-color: #5eb95e;
+}
+
+.login {
+    background-color: #dd514c;
 }
 </style>

@@ -11,7 +11,7 @@
             </div>
         </header>
         <div id="banner">
-            <swiper :list="baseList" height="9.25rem" width="100%" v-model="index" @on-index-change="demo01_onIndexChange"></swiper>
+            <swiper :list="baseList" style="width:100%;margin:0 auto;" auto=true height="9.25rem" :aspect-ratio="241/640" dots-position="center"></swiper>
         </div>
         <div id="banner_bottom">
             <a href="#" v-for="item in bannerBottomList" style="width:20%">
@@ -139,7 +139,6 @@ export default {
             }, {
                 img: '../../../src/assets/Home/banner2.jpg',
             }],
-            index: 0,
             bannerBottomList: [
                 { img: "../../../src/assets/Home/flower_1.png", title: '鲜花', bg: '#fb8989' },
                 { img: '../../../src/assets/Home/cake_2.png', title: "蛋糕", bg: "#de8dc5" },
@@ -182,9 +181,6 @@ export default {
         }
     },
     methods: {
-        demo01_onIndexChange(index) {
-            this.demo01_index = index
-        },
         toTop() {
             $('body').animate({ scrollTop: 0 }, 300)
         }

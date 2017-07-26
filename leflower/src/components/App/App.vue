@@ -58,8 +58,8 @@ import router from '@/router/router'
 
 export default {
   name: 'app',
-  components:{
-  types
+  components: {
+    types
   },
   data() {
     return {
@@ -73,7 +73,12 @@ export default {
         $('#aside').animate({ bottom: '3rem' })
       }
       if (document.body.scrollTop == 0) {
-        $('#aside').animate({ bottom: '0' }, 300)
+        // console.log('执行开始' )
+        if($('#aside').is(":animated")){
+          console.log('上次动画在执行' )
+        }
+        $('#aside').stop(true,false).animate({ bottom: '0' }, 300)
+        // console.log(document.body.scrollTop )
       }
     })
   },
@@ -91,7 +96,7 @@ export default {
         content: $('.layer'),
         btn: ["关闭"],
         btnAlign: "c",
-        cloaseBtn:1
+        cloaseBtn: 1
       })
     }
   }
